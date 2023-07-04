@@ -9,9 +9,26 @@ Selections are case insensitive.
 Best out of five wins.
 
  */
-let weapons = ["rock", "paper", "scissors"];
+const weapons = ["rock", "paper", "scissors"];
 function getComputerChoice() {
   return weapons[Math.floor(Math.random() * weapons.length)];
-  console.log(getComputerChoice);
 }
 getComputerChoice(weapons);
+
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection) {
+    return "You Tie!";
+  } else if (
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "paper" && computerSelection === "rock") ||
+    (playerSelection === "scissors" && computerSelection === "paper")
+  ) {
+    return "You win!";
+  } else {
+    return "You lose!";
+  }
+}
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+
+console.log(playRound(playerSelection, computerSelection));
