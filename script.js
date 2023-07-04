@@ -7,6 +7,8 @@ Rock beats Scissors.
 Scissors beats Paper.
 Selections are case insensitive.
 Best out of five wins.
+may need something like this?
+secretNumber = Math.trunc(Math.random() * 20) + 1;
 
  */
 const weapons = ["rock", "paper", "scissors"];
@@ -16,6 +18,7 @@ function getComputerChoice() {
 getComputerChoice(weapons);
 
 function playRound(playerSelection, computerSelection) {
+  playerSelection = playerSelection.toLowerCase();
   if (playerSelection === computerSelection) {
     return `No winner, ${playerSelection} ties ${computerSelection}`;
   } else if (
@@ -28,13 +31,13 @@ function playRound(playerSelection, computerSelection) {
     return `You lose! ${computerSelection} beats ${playerSelection}!`;
   }
 }
-const playerSelection = "rock";
+const playerSelection = prompt("Choose your weapon! Rock, Paper or Scissors");
 const computerSelection = getComputerChoice();
 
 // console.log(playRound(playerSelection, computerSelection));
 
 function game() {
-  for (let i = 0; i < weapons.length; i++)
-    return playRound(playerSelection, computerSelection);
+  // for (let i = 0; i < 5; i++)
+  return playRound(playerSelection, computerSelection);
 }
 console.log(game());
