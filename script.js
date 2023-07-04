@@ -31,4 +31,10 @@ function playRound(playerSelection, computerSelection) {
 const playerSelection = "rock";
 const computerSelection = getComputerChoice();
 
-console.log(playRound(playerSelection, computerSelection));
+// console.log(playRound(playerSelection, computerSelection));
+
+function game() {
+  for (let i = 0; i < weapons.length; i++)
+    return playRound(playerSelection, computerSelection);
+}
+console.log(game());
